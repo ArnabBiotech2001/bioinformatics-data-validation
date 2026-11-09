@@ -1,0 +1,21 @@
+import numpy as np
+import pandas as pd
+
+print("--- Data Science Validation Check ---")
+
+# Create a sample array representing genomic data points
+expression_data = np.array([12.5, 45.1, 0.0, 89.3, 102.4])
+
+# Filter out zero values using NumPy logic
+active_genes = expression_data[expression_data > 0]
+print(f"Total non-zero data tracks found: {len(active_genes)}")
+
+# Structure a mock metadata profile using Pandas
+metadata_sheet = pd.DataFrame({
+    "Sample_ID": ["SRR001", "SRR002", "SRR003"],
+    "Phenotype": ["Tumor", "Normal", "Tumor"]
+})
+
+print("\nMetadata structural view:")
+print(metadata_sheet)
+print("\nValidation Complete: Setup is ready for raw datasets!")
